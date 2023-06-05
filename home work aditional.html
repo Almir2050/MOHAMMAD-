@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Football Matches</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1e5799, #2989d8);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      padding-top: 20px;
+    }
+
+    #matches {
+      margin: 20px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+    }
+
+    canvas {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #fff;
+      margin-top: 20px;
+    }
+    window.addEventListener('DOMContentLoaded', (event) => {
+    const canvas = document.getElementById('field');
+    const ctx = canvas.getContext('2d');
+  
+    // Draw football field
+    ctx.fillStyle = '#4CAF50'; // Green color
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+    // Draw football
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = '#FFFFFF'; // White color
+    ctx.fill();
+    ctx.closePath();
+  });
+  </style>
+</head>
+<body>
+  <h1>Football Matches</h1>
+  <div id="matches"></div>
+  <canvas id="field" width="800" height="400"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
